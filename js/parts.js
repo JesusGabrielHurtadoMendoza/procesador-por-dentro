@@ -1,4 +1,4 @@
-/* Procesador por Dentro — construcción de piezas 3D.
+js/parts.js/* Procesador por Dentro — construcción de piezas 3D.
    Todo se dibuja con código: cajas, cilindros y texturas en canvas. */
 window.PXD = window.PXD || {};
 
