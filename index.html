@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Procesador por Dentro</title>
+<meta name="description" content="Procesador en 3D para aprender: desármalo, ármalo, mira cómo funciona, cómo se fabrica y compáralo con otros.">
+<meta name="theme-color" content="#0B1016">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect x='7' y='7' width='20' height='20' rx='3' fill='none' stroke='%23D08A4E' stroke-width='2'/%3E%3Crect x='12' y='12' width='10' height='10' rx='1.5' fill='%237FC4D4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="7" y="7" width="20" height="20" rx="3" fill="none" stroke="#D08A4E" stroke-width="2"/><rect x="12" y="12" width="10" height="10" rx="1.5" fill="#7FC4D4"/><g stroke="#D08A4E" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M17 2v4M22 2v4M12 28v4M17 28v4M22 28v4M2 12h4M2 17h4M2 22h4M28 12h4M28 17h4M28 22h4"/></g></svg>
+      <div><h1>Procesador por Dentro</h1><p>Desármalo, ármalo y mira cómo piensa</p></div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Modo">
+      <button class="tab" role="tab" data-mode="desarmar" aria-selected="true">Desarmar</button>
+      <button class="tab" role="tab" data-mode="armar" aria-selected="false">Armar</button>
+      <button class="tab" role="tab" data-mode="funciona" aria-selected="false">Cómo funciona</button>
+      <button class="tab" role="tab" data-mode="fabricacion" aria-selected="false">Fabricación</button>
+      <button class="tab" role="tab" data-mode="comparar" aria-selected="false">Comparar</button>
+      <button class="tab" role="tab" data-mode="sockets" aria-selected="false">Sockets</button>
+    </nav>
+    <div class="actions">
+      <button class="btn ghost" id="btnSound" aria-pressed="false" title="Activar o quitar sonido">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10L5 10H2z" fill="currentColor"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.5 3.5a6 6 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Silencio</span>
+      </button>
+      <button class="btn ghost" id="btnPresent" aria-pressed="false" title="Pantalla completa para clase o exposición">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Presentar</span>
+      </button>
+    </div>
+  </header>
+  <main class="main">
+    <section class="viewer" id="viewer">
+      <canvas id="c" aria-label="Modelo 3D de un procesador"></canvas>
+      <div id="labels"></div>
+      <div class="help" id="help">Arrastra para girar · rueda para acercar</div>
+      <div class="present-hint" id="presentHint" hidden>← → cambiar paso · 1–6 cambiar modo · Esc salir</div>
+      <div id="toast" hidden></div>
+      <div class="dock" id="dock"></div>
+    </section>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/data.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/parts.js"></script>
+<script src="js/mode-fabricacion.js"></script>
+<script src="js/mode-comparar.js"></script>
+<script src="js/mode-sockets.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
